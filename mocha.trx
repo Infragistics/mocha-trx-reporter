@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<TestRun xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" id="f77b886d-93f2-4d3d-b874-a73dceb35abe" name="Sample TRX Import" runUser="Pablito">
+  <TestSettings name="Default Test Settings" id="ce1a4cfb-64fa-4d63-8815-e9984737a62c"/>
+  <ResultSummary outcome="Failed">
+    <Counters total="3" executed="3" passed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="1" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0"/>
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest id="0de14a27-c203-4d9e-8629-f1fe156a669c" name="On sample test 1 should be 1">
+      <Execution id="096abbd3-88c9-4642-9864-bf230734e796"/>
+      <TestMethod codeBase="" className="" name=""/>
+    </UnitTest>
+    <UnitTest id="9e7f7e48-2755-4193-bc24-670d651b3ece" name="On sample test 1 should not be 2">
+      <Execution id="4a213a5b-ce56-4be0-858d-0a4544f2612d"/>
+      <TestMethod codeBase="" className="" name=""/>
+    </UnitTest>
+    <UnitTest id="94ed012c-5d3a-4800-aac6-4d4726082f5f" name="On sample test 1 should be 1">
+      <Execution id="5f27b02d-909a-4a3a-857b-b7327db69308"/>
+      <TestMethod codeBase="" className="" name=""/>
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList id="8c84fa94-04c1-424b-9868-57a2d4851a1d" name="Results Not in a List"/>
+    <TestList id="19431567-8539-422a-85d7-44ee4e166bda" name="All Loaded Results"/>
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="0de14a27-c203-4d9e-8629-f1fe156a669c" executionId="096abbd3-88c9-4642-9864-bf230734e796" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d"/>
+    <TestEntry testId="9e7f7e48-2755-4193-bc24-670d651b3ece" executionId="4a213a5b-ce56-4be0-858d-0a4544f2612d" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d"/>
+    <TestEntry testId="94ed012c-5d3a-4800-aac6-4d4726082f5f" executionId="5f27b02d-909a-4a3a-857b-b7327db69308" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d"/>
+  </TestEntries>
+  <Results>
+    <UnitTestResult testId="0de14a27-c203-4d9e-8629-f1fe156a669c" testName="On sample test 1 should be 1" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" computerName="pablopenen" outcome="Passed" duration="2" executionId="096abbd3-88c9-4642-9864-bf230734e796"/>
+    <UnitTestResult testId="9e7f7e48-2755-4193-bc24-670d651b3ece" testName="On sample test 1 should not be 2" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" computerName="pablopenen" outcome="Failed" duration="1" executionId="4a213a5b-ce56-4be0-858d-0a4544f2612d"/>
+    <UnitTestResult testId="94ed012c-5d3a-4800-aac6-4d4726082f5f" testName="On sample test 1 should be 1" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" computerName="pablopenen" outcome="Inconclusive" executionId="5f27b02d-909a-4a3a-857b-b7327db69308"/>
+  </Results>
+</TestRun>
