@@ -1,2 +1,7 @@
+# Webstorm IDE file
 .idea
+
+# Generated trx files
+*.trx
+
 node_modules
