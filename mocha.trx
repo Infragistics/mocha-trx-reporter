@@ -1,23 +1,29 @@
 <?xml version="1.0"?>
-<TestRun xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" id="703a0c8d-8682-45ed-ad09-d8f5d6ab1a51" name="pablopenen@Pablos-MacBook-Pro.local 2015-08-12 18:22:06" runUser="pablopenen">
+<TestRun xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010" id="f6d30a99-c99f-48f3-8211-7301f5738cb5" name="pablopenen@Pablos-MacBook-Pro.local 2015-08-13 15:11:32" runUser="pablopenen">
+  <Times creation="2015-08-13T15:11:32.290Z" queuing="2015-08-13T15:11:32.290Z" start="2015-08-13T15:11:31.042Z" finish="2015-08-13T15:11:32.290Z"/>
   <TestSettings name="Default Test Settings" id="ce1a4cfb-64fa-4d63-8815-e9984737a62c"/>
   <ResultSummary outcome="Failed">
-    <Counters total="3" executed="3" passed="1" error="0" failed="1" timeout="0" aborted="0" inconclusive="1" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0"/>
+    <Counters total="4" executed="4" passed="1" error="0" failed="2" timeout="0" aborted="0" inconclusive="1" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0"/>
   </ResultSummary>
   <TestDefinitions>
-    <UnitTest id="5fe06635-e5d7-439c-bedb-46d9776017e9" name="On sample test 1 should be 1">
+    <UnitTest id="1569739e-062b-4121-bd40-bf56caf5a0e0" name="On sample test 1 should be 1">
       <Description>1 should be 1</Description>
-      <Execution id="a0fc4bef-0ad4-48b9-9b26-205b307dd29a"/>
+      <Execution id="5e94cf94-3445-400a-86f6-8e697f6f9c63"/>
       <TestMethod codeBase="" className="" name=""/>
     </UnitTest>
-    <UnitTest id="776efa00-6d85-45df-8548-0a5951a537c1" name="On sample test 1 should not be 2">
-      <Description>1 should not be 2</Description>
-      <Execution id="d986aa8f-42bc-49cb-a3a3-b76d8d03058c"/>
+    <UnitTest id="dfb58a1f-5c47-4055-946b-dbb3b56db2fa" name="On sample test 1 should be 2">
+      <Description>1 should be 2</Description>
+      <Execution id="c80b978d-eb92-4dcd-8879-77ea28774711"/>
       <TestMethod codeBase="" className="" name=""/>
     </UnitTest>
-    <UnitTest id="dc207c8f-3d3c-46e9-8e17-471d39abe009" name="On sample test 1 should be 1">
+    <UnitTest id="aea3477e-9545-488e-b2b6-ed3e021c98ba" name="On sample test 1 should be 3">
+      <Description>1 should be 3</Description>
+      <Execution id="bd0323ed-52e8-49c3-bd6b-c77f9203dad1"/>
+      <TestMethod codeBase="" className="" name=""/>
+    </UnitTest>
+    <UnitTest id="a9d33a1d-54e2-4d63-998b-8365adeb60e7" name="On sample test 1 should be 1">
       <Description>1 should be 1</Description>
-      <Execution id="aa570ae6-50f5-4af2-83cf-6d6cdc3ced93"/>
+      <Execution id="d848ad67-8ae5-4084-b1ee-f89614f8ca20"/>
       <TestMethod codeBase="" className="" name=""/>
     </UnitTest>
   </TestDefinitions>
@@ -26,13 +32,14 @@
     <TestList id="19431567-8539-422a-85d7-44ee4e166bda" name="All Loaded Results"/>
   </TestLists>
   <TestEntries>
-    <TestEntry testId="5fe06635-e5d7-439c-bedb-46d9776017e9" executionId="a0fc4bef-0ad4-48b9-9b26-205b307dd29a" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d"/>
-    <TestEntry testId="776efa00-6d85-45df-8548-0a5951a537c1" executionId="d986aa8f-42bc-49cb-a3a3-b76d8d03058c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d"/>
-    <TestEntry testId="dc207c8f-3d3c-46e9-8e17-471d39abe009" executionId="aa570ae6-50f5-4af2-83cf-6d6cdc3ced93" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d"/>
+    <TestEntry testId="1569739e-062b-4121-bd40-bf56caf5a0e0" executionId="5e94cf94-3445-400a-86f6-8e697f6f9c63" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d"/>
+    <TestEntry testId="dfb58a1f-5c47-4055-946b-dbb3b56db2fa" executionId="c80b978d-eb92-4dcd-8879-77ea28774711" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d"/>
+    <TestEntry testId="aea3477e-9545-488e-b2b6-ed3e021c98ba" executionId="bd0323ed-52e8-49c3-bd6b-c77f9203dad1" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d"/>
+    <TestEntry testId="a9d33a1d-54e2-4d63-998b-8365adeb60e7" executionId="d848ad67-8ae5-4084-b1ee-f89614f8ca20" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d"/>
   </TestEntries>
   <Results>
-    <UnitTestResult testId="5fe06635-e5d7-439c-bedb-46d9776017e9" testName="On sample test 1 should be 1" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" computerName="Pablos-MacBook-Pro.local" outcome="Passed" startTime="2015-08-12T18:22:05.375Z" endTime="2015-08-12T18:22:06.621Z" duration="00:00:01.245" executionId="a0fc4bef-0ad4-48b9-9b26-205b307dd29a"/>
-    <UnitTestResult testId="776efa00-6d85-45df-8548-0a5951a537c1" testName="On sample test 1 should not be 2" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" computerName="Pablos-MacBook-Pro.local" outcome="Failed" startTime="2015-08-12T18:22:06.621Z" endTime="2015-08-12T18:22:06.625Z" duration="00:00:00.001" executionId="d986aa8f-42bc-49cb-a3a3-b76d8d03058c">
+    <UnitTestResult testId="1569739e-062b-4121-bd40-bf56caf5a0e0" testName="On sample test 1 should be 1" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" computerName="Pablos-MacBook-Pro.local" outcome="Passed" startTime="2015-08-13T15:11:31.044Z" endTime="2015-08-13T15:11:32.283Z" duration="00:00:01.239" executionId="5e94cf94-3445-400a-86f6-8e697f6f9c63"/>
+    <UnitTestResult testId="dfb58a1f-5c47-4055-946b-dbb3b56db2fa" testName="On sample test 1 should be 2" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" computerName="Pablos-MacBook-Pro.local" outcome="Failed" startTime="2015-08-13T15:11:32.284Z" endTime="2015-08-13T15:11:32.288Z" duration="00:00:00.000" executionId="c80b978d-eb92-4dcd-8879-77ea28774711">
       <Output>
         <StdOut/>
         <ErrorInfo>
@@ -42,6 +49,16 @@
         </ErrorInfo>
       </Output>
     </UnitTestResult>
-    <UnitTestResult testId="dc207c8f-3d3c-46e9-8e17-471d39abe009" testName="On sample test 1 should be 1" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" computerName="Pablos-MacBook-Pro.local" outcome="Inconclusive" endTime="2015-08-12T18:22:06.626Z" duration="00:00:00.000" executionId="aa570ae6-50f5-4af2-83cf-6d6cdc3ced93"/>
+    <UnitTestResult testId="aea3477e-9545-488e-b2b6-ed3e021c98ba" testName="On sample test 1 should be 3" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" computerName="Pablos-MacBook-Pro.local" outcome="Failed" startTime="2015-08-13T15:11:32.288Z" endTime="2015-08-13T15:11:32.289Z" duration="00:00:00.001" executionId="bd0323ed-52e8-49c3-bd6b-c77f9203dad1">
+      <Output>
+        <StdOut/>
+        <ErrorInfo>
+          <Message>expected 1 to be 3</Message>
+          <StackTrace>AssertionError: expected 1 to be 3
+    at Context.&lt;anonymous&gt; (sampleTest/test.js:21:22)</StackTrace>
+        </ErrorInfo>
+      </Output>
+    </UnitTestResult>
+    <UnitTestResult testId="a9d33a1d-54e2-4d63-998b-8365adeb60e7" testName="On sample test 1 should be 1" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" computerName="Pablos-MacBook-Pro.local" outcome="Inconclusive" endTime="2015-08-13T15:11:32.290Z" duration="00:00:00.000" executionId="d848ad67-8ae5-4084-b1ee-f89614f8ca20"/>
   </Results>
 </TestRun>

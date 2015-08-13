@@ -11,9 +11,14 @@ describe('On sample test', function() {
         }, 1234);
     });
 
-    it('1 should not be 2', function() {
+    it('1 should be 2', function() {
 
         should(1).be.equal(2);
+    });
+
+    it('1 should be 3', function() {
+
+        should(1).be.equal(3);
     });
 });
 
