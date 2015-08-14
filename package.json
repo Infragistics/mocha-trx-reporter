@@ -2,7 +2,7 @@
   "name": "mocha-trx-reporter",
   "version": "1.0.0",
   "description": "A mocha reporter for trx",
-  "main": "index.js",
+  "main": "lib/trx.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha test/",
     "test-trx": "./node_modules/mocha/bin/mocha --reporter lib/trx.js test/"
