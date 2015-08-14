@@ -32,4 +32,4 @@ Running tests
 
 For generating sample trx file
 
-`$ ./node_modules/mocha/bin/mocha --reporter lib/trx.js sampleTest/test.js`
+`$ ./node_modules/mocha/bin/mocha --reporter lib/trx.js sampleTest/test.js` > sampleResult.trx
