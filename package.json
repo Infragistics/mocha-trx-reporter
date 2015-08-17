@@ -5,7 +5,7 @@
   "main": "lib/trx.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha test/",
-    "test-trx": "./node_modules/mocha/bin/mocha --reporter lib/trx.js test/"
+    "test-trx-file": "./node_modules/mocha/bin/mocha --reporter lib/trx.js --reporter-file resultFile.trx test/"
   },
   "repository": {
     "type": "git",
