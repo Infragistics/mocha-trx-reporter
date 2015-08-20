@@ -1,28 +1,26 @@
 {
   "name": "mocha-trx-reporter",
-  "version": "1.0.0",
   "description": "A mocha reporter for trx",
-  "main": "lib/trx.js",
-  "scripts": {
-    "test": "./node_modules/mocha/bin/mocha test/",
-    "test-trx-file": "./node_modules/mocha/bin/mocha --reporter lib/trx.js --reporter-file resultFile.trx test/"
-  },
-  "repository": {
-    "type": "git",
-    "url": "http://tfs.infragistics.local:8080/tfs/engineering/UXTools-git/_git/mocha-trx-reporter"
-  },
+  "version": "1.0.0",
+  "author": "Pablo Penén <ppenen@infragistics.com>",
+  "license": "MIT",
+  "repository": "Infragistics/mocha-trx-reporter",
+  "homepage": "https://github.com/Infragistics/mocha-trx-reporter",
   "keywords": [
     "mocha",
     "trx",
     "reporter"
   ],
-  "author": "pablopenen",
-  "license": "ISC",
+  "main": "lib/trx.js",
   "dependencies": {
     "mocha": "^2.2.5",
     "node-trx": "git://github.com/indigostudio/node-trx.git#master"
   },
   "devDependencies": {
     "should": "^7.0.3"
+  },
+  "scripts": {
+    "test": "./node_modules/mocha/bin/mocha test/",
+    "test-trx-file": "./node_modules/mocha/bin/mocha --reporter lib/trx.js --reporter-file resultFile.trx test/"
   }
 }
