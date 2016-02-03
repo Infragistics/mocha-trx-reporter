@@ -2,6 +2,8 @@
 
 > Reporter for the Visual Studio TRX format.
 
+[![Build Status](https://travis-ci.org/Infragistics/mocha-trx-reporter.svg?branch=master)](https://travis-ci.org/Infragistics/mocha-trx-reporter)
+
 ## Usage
 
 Install package
