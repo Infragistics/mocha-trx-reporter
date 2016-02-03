@@ -13,14 +13,14 @@
   ],
   "main": "lib/trx.js",
   "dependencies": {
-    "mocha": "^2.2.5",
+    "mocha": "^2.4.5",
     "node-trx": "git://github.com/indigostudio/node-trx.git#master"
   },
   "devDependencies": {
     "should": "^7.0.3"
   },
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha test/",
-    "test-trx-file": "./node_modules/mocha/bin/mocha --reporter lib/trx.js --reporter-file resultFile.trx test/"
+    "test": "mocha test/",
+    "test-trx-file": "mocha --reporter lib/trx.js --reporter-options output=resultFile.trx test/"
   }
 }

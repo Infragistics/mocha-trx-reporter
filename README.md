@@ -14,11 +14,11 @@ Run mocha with trx reporter
 
 To save the output into a file, run:
 
-`$ ./node_modules/mocha/bin/mocha --reporter mocha-trx-reporter --reporter-file myResult.trx path/to/tests`
+`$ ./node_modules/mocha/bin/mocha --reporter mocha-trx-reporter --reporter-options output=myResult.trx path/to/tests`
 
 or, if you want a more detailed filename:
 
-`$ ./node_modules/mocha/bin/mocha --reporter mocha-trx-reporter --reporter-file "$(whoami)_$(hostname)_$(date +%F_%H_%M_%S).trx" path/to/tests`
+`$ ./node_modules/mocha/bin/mocha --reporter mocha-trx-reporter --reporter-options output="$(whoami)_$(hostname)_$(date +%F_%H_%M_%S).trx" path/to/tests`
 
 or you can set `MOCHA_REPORTER_FILE` environment var with the desired filename
 
@@ -34,4 +34,4 @@ Running tests
 
 For generating sample trx file
 
-`$ ./node_modules/mocha/bin/mocha --reporter lib/trx.js --reporter-file sampleResult.trx sampleTest/test.js`
+`$ ./node_modules/mocha/bin/mocha --reporter lib/trx.js --reporter-options output=sampleResult.trx sampleTest/test.js`
