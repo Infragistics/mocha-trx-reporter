@@ -2,7 +2,7 @@
   "name": "mocha-trx-reporter",
   "description": "A mocha reporter for trx",
   "version": "2.0.1",
-  "author": "Pablo Penén <ppenen@infragistics.com>",
+  "author": "Pablo PenÃ©n <ppenen@infragistics.com>",
   "license": "MIT",
   "repository": "Infragistics/mocha-trx-reporter",
   "homepage": "https://github.com/Infragistics/mocha-trx-reporter",
@@ -13,11 +13,11 @@
   ],
   "main": "lib/trx.js",
   "dependencies": {
-    "mocha": "^2.4.5",
-    "node-trx": "git://github.com/indigostudio/node-trx.git#master"
+    "mocha": "~3.0.1",
+    "node-trx": "git://github.com/bgever/node-trx.git#support-pending-and-timeout-outcomes"
   },
   "devDependencies": {
-    "should": "^7.0.3"
+    "should": "^10.0.0"
   },
   "scripts": {
     "test": "mocha test/",

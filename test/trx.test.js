@@ -14,31 +14,33 @@ describe('On trx reporter', function(){
             reporter: trxReporter
         });
         suite = new Suite('TRX suite', 'root');
+        suite.timeout(100);
         runner = new Runner(suite);
         var mochaReporter = new mocha._reporter(runner);
 
-        var testTitle = 'trx test';
-        var error = { message: 'omg' };
-
-        suite.addTest(new Test(testTitle, function (done) {
-            done(new Error(error.message));
+        suite.addTest(new Test('handles errors', function (done) {
+            done(new Error({ message: 'omg' }));
         }));
 
-        suite.addTest(new Test(testTitle));
+        suite.addTest(new Test('handles pending tests'));
 
-        suite.addTest(new Test(testTitle, function (done) {
+        suite.addTest(new Test('handles async tests', function (done) {
             done();
+        }));
+
+        suite.addTest(new Test('handles timeout', function (done) {
+            setTimeout(done, 200);
         }));
     });
 
-    it('should create correct mocha test result', function(done){
+    it('should create correct mocha test result', function (done) {
 
         runner.run(function(failureCount) {
-            failureCount.should.be.exactly(1);
+            failureCount.should.be.exactly(2);
             runner.should.have.property('testResults');
             runner.testResults.should.have.property('tests');
             runner.testResults.tests.should.be.an.instanceOf(Array);
-            runner.testResults.tests.should.have.a.lengthOf(3);
+            runner.testResults.tests.should.have.a.lengthOf(4);
 
             done();
         });
