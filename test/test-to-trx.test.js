@@ -1,7 +1,7 @@
 var should = require('should');
 var testToTrx = require('../lib/test-to-trx');
 
-describe('On test-to-trx', function () {
+describe('Module test-to-trx', function () {
 
     var computerName = 'mycomputer';
 
