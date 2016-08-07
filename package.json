@@ -14,7 +14,7 @@
   "main": "lib/trx.js",
   "dependencies": {
     "mocha": "~3.0.1",
-    "node-trx": "git://github.com/bgever/node-trx.git#support-pending-and-timeout-outcomes"
+    "node-trx": "git://github.com/bgever/node-trx.git#support-notexecuted-outcome"
   },
   "devDependencies": {
     "should": "^10.0.0"
