@@ -82,5 +82,77 @@ describe('Mocha with mocha-trx-reporter', function () {
                 });
             });
         });
+
+        context('excludePending and warnExcludedPending enabled', function () {
+
+            context('having 1 pending test', function () {
+
+                var mocha;
+
+                beforeEach(function () {
+                    mocha = new Mocha({
+                        reporter: trxReporter,
+                        reporterOptions: {
+                            excludePending: true,
+                            warnExcludedPending: true
+                        }
+                    });
+                    var suite = new Suite('TRX suite', 'root');
+                    suite.addTest(new Test('handles pending tests'));
+                    mocha.suite = suite;
+                });
+
+                describe('run', function () {
+
+                    it('should create correct mocha test result', function (done) {
+
+                        var runner = mocha.run();
+                        runner.on('end', function () {
+                            runner.failures.should.be.exactly(0);
+                            runner.should.have.property('testResults');
+                            runner.testResults.should.have.property('tests');
+                            runner.testResults.tests.should.be.an.instanceOf(Array);
+                            runner.testResults.tests.should.have.a.lengthOf(1);
+                            done();
+                        })
+                    });
+                });
+            });
+
+            context('having 2 pending tests', function () {
+
+                var mocha;
+
+                beforeEach(function () {
+                    mocha = new Mocha({
+                        reporter: trxReporter,
+                        reporterOptions: {
+                            excludePending: true,
+                            warnExcludedPending: true
+                        }
+                    });
+                    var suite = new Suite('TRX suite', 'root');
+                    suite.addTest(new Test('handles pending test 1'));
+                    suite.addTest(new Test('handles pending test 2'));
+                    mocha.suite = suite;
+                });
+
+                describe('run', function () {
+
+                    it('should create correct mocha test result', function (done) {
+
+                        var runner = mocha.run();
+                        runner.on('end', function () {
+                            runner.failures.should.be.exactly(0);
+                            runner.should.have.property('testResults');
+                            runner.testResults.should.have.property('tests');
+                            runner.testResults.tests.should.be.an.instanceOf(Array);
+                            runner.testResults.tests.should.have.a.lengthOf(2);
+                            done();
+                        })
+                    });
+                });
+            });
+        });
     });
 });
