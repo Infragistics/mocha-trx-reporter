@@ -13,11 +13,11 @@
   ],
   "main": "lib/trx.js",
   "dependencies": {
-    "mocha": "^2.4.5",
-    "node-trx": "git+https://github.com/indigostudio/node-trx.git#master"
+    "mocha": "~3.0.1",
+    "node-trx": "^0.6.0"
   },
   "devDependencies": {
-    "should": "^7.0.3"
+    "should": "^10.0.0"
   },
   "scripts": {
     "test": "mocha test/",
