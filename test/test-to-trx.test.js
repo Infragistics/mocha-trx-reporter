@@ -9,6 +9,7 @@ describe('Module test-to-trx', function () {
         var mochaTestMock = {
             title: '1 should be 1',
             fullTitle: function() { return 'On sample test 1 should be 1'; },
+            file: "testfile.js",
             duration: 1243,
             err: undefined,
             pending: false,
@@ -17,7 +18,7 @@ describe('Module test-to-trx', function () {
             end: new Date('2015-08-10T00:00:01.234Z')
         };
 
-        var trxTest = testToTrx(mochaTestMock, computerName);
+        var trxTest = testToTrx(mochaTestMock, computerName, process.cwd());
 
         trxTest.should.be.instanceOf(Object);
         trxTest.should.have.property('computerName', 'mycomputer');
@@ -34,10 +35,9 @@ describe('Module test-to-trx', function () {
         trxTest.test.should.have.property('id');
         trxTest.test.should.have.property('name', 'On sample test 1 should be 1');
         trxTest.test.should.have.property('type');
-        trxTest.test.should.have.property('methodName', '');
-        trxTest.test.should.have.property('methodCodeBase', '');
-        trxTest.test.should.have.property('methodClassName', '');
-        trxTest.test.should.have.property('description', '1 should be 1');
+        trxTest.test.should.have.property('methodName', 'none');
+        trxTest.test.should.have.property('methodCodeBase', 'testfile.js');
+        trxTest.test.should.have.property('methodClassName', 'none');
     });
 
     it('should generate correct trx object for failed test', function () {
