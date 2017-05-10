@@ -14,7 +14,7 @@
   "main": "lib/trx.js",
   "dependencies": {
     "mocha": "~3.0.1",
-    "node-trx": "^0.6.0"
+    "node-trx": "^0.8.0"
   },
   "devDependencies": {
     "should": "^10.0.0"
