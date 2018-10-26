@@ -37,6 +37,12 @@ or you can set `MOCHA_REPORTER_FILE` environment var with the desired filename
   When combined with *excludePending*, writes a warning to stderr with the number of
   tests that have been excluded because they had the state `Pending`, if the number is more than 0.
 
+#### Multiple options
+
+If you want to use multiple options, seperate them with a `,` like this:
+
+`--reporter-options treatPendingAsNotExecuted,output=./test-result.trx`
+
 ## Development
 
 Clone repository and install dependencies
