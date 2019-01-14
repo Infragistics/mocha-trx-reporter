@@ -1,42 +1,34 @@
-var Mocha = require('mocha')
-var Suite = Mocha.Suite,
-    Runner = Mocha.Runner,
-    Test = Mocha.Test;
-
-var trxReporter = require('../lib/trx.js');
-var should = require('should');
+require('should');
+const Mocha = require('mocha');
+const trxReporter = require('../lib/trx.js');
 
 describe('Mocha with mocha-trx-reporter', function () {
-
     context('having default options', function () {
-
-        var mocha;
+        let mocha;
 
         beforeEach(function () {
             mocha = new Mocha({
                 reporter: trxReporter,
-                timeout: 100
+                timeout: 100,
             });
-            var suite = new Suite('TRX suite', 'root');
-            suite.addTest(new Test('handles errors', function (done) {
+            const suite = new Mocha.Suite('TRX suite', 'root');
+            suite.addTest(new Mocha.Test('handles errors', ((done) => {
                 done(new Error({ message: 'omg' }));
-            }));
-            suite.addTest(new Test('handles pending tests'));
-            suite.addTest(new Test('handles async tests', function (done) {
+            })));
+            suite.addTest(new Mocha.Test('handles pending tests'));
+            suite.addTest(new Mocha.Test('handles async tests', ((done) => {
                 done();
-            }));
-            suite.addTest(new Test('handles timeout', function (done) {
+            })));
+            suite.addTest(new Mocha.Test('handles timeout', ((done) => {
                 setTimeout(done, 200);
-            }));
+            })));
             mocha.suite = suite;
         });
 
         describe('run', function () {
-
             it('should create correct test result', function (done) {
-
-                var runner = mocha.run();
-                runner.on('end', function () {
+                const runner = mocha.run();
+                runner.on('end', () => {
                     runner.failures.should.be.exactly(1);
                     runner.should.have.property('testResults');
                     runner.testResults.should.have.property('tests');
@@ -49,107 +41,96 @@ describe('Mocha with mocha-trx-reporter', function () {
     });
 
     context('having custom options', function () {
-
         context('treatPendingAsNotExecuted enabled', function () {
-
-            var mocha;
+            let mocha;
 
             beforeEach(function () {
                 mocha = new Mocha({
                     reporter: trxReporter,
                     reporterOptions: {
-                        treatPendingAsNotExecuted: true
-                    }
+                        treatPendingAsNotExecuted: true,
+                    },
                 });
-                var suite = new Suite('TRX suite', 'root');
-                suite.addTest(new Test('handles pending tests'));
+                const suite = new Mocha.Suite('TRX suite', 'root');
+                suite.addTest(new Mocha.Test('handles pending tests'));
                 mocha.suite = suite;
             });
 
             describe('run', function () {
-
                 it('should create correct mocha test result', function (done) {
-
-                    var runner = mocha.run();
-                    runner.on('end', function () {
+                    const runner = mocha.run();
+                    runner.on('end', () => {
                         runner.failures.should.be.exactly(0);
                         runner.should.have.property('testResults');
                         runner.testResults.should.have.property('tests');
                         runner.testResults.tests.should.be.an.instanceOf(Array);
                         runner.testResults.tests.should.have.a.lengthOf(1);
                         done();
-                    })
+                    });
                 });
             });
         });
 
         context('excludePending and warnExcludedPending enabled', function () {
-
             context('having 1 pending test', function () {
-
-                var mocha;
+                let mocha;
 
                 beforeEach(function () {
                     mocha = new Mocha({
                         reporter: trxReporter,
                         reporterOptions: {
                             excludePending: true,
-                            warnExcludedPending: true
-                        }
+                            warnExcludedPending: true,
+                        },
                     });
-                    var suite = new Suite('TRX suite', 'root');
-                    suite.addTest(new Test('handles pending tests'));
+                    const suite = new Mocha.Suite('TRX suite', 'root');
+                    suite.addTest(new Mocha.Test('handles pending tests'));
                     mocha.suite = suite;
                 });
 
                 describe('run', function () {
-
-                    it('should create correct mocha test result', function (done) {
-
-                        var runner = mocha.run();
-                        runner.on('end', function () {
+                    it('should create correct mocha test result', (done) => {
+                        const runner = mocha.run();
+                        runner.on('end', () => {
                             runner.failures.should.be.exactly(0);
                             runner.should.have.property('testResults');
                             runner.testResults.should.have.property('tests');
                             runner.testResults.tests.should.be.an.instanceOf(Array);
                             runner.testResults.tests.should.have.a.lengthOf(1);
                             done();
-                        })
+                        });
                     });
                 });
             });
 
             context('having 2 pending tests', function () {
-
-                var mocha;
+                let mocha;
 
                 beforeEach(function () {
                     mocha = new Mocha({
                         reporter: trxReporter,
                         reporterOptions: {
                             excludePending: true,
-                            warnExcludedPending: true
-                        }
+                            warnExcludedPending: true,
+                        },
                     });
-                    var suite = new Suite('TRX suite', 'root');
-                    suite.addTest(new Test('handles pending test 1'));
-                    suite.addTest(new Test('handles pending test 2'));
+                    const suite = new Mocha.Suite('TRX suite', 'root');
+                    suite.addTest(new Mocha.Test('handles pending test 1'));
+                    suite.addTest(new Mocha.Test('handles pending test 2'));
                     mocha.suite = suite;
                 });
 
                 describe('run', function () {
-
-                    it('should create correct mocha test result', function (done) {
-
-                        var runner = mocha.run();
-                        runner.on('end', function () {
+                    it('should create correct mocha test result', (done) => {
+                        const runner = mocha.run();
+                        runner.on('end', () => {
                             runner.failures.should.be.exactly(0);
                             runner.should.have.property('testResults');
                             runner.testResults.should.have.property('tests');
                             runner.testResults.tests.should.be.an.instanceOf(Array);
                             runner.testResults.tests.should.have.a.lengthOf(2);
                             done();
-                        })
+                        });
                     });
                 });
             });
