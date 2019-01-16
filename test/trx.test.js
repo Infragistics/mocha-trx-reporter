@@ -40,6 +40,44 @@ describe('Mocha with mocha-trx-reporter', function () {
         });
     });
 
+    context('with failing hooks', function () {
+        let mocha;
+
+        beforeEach(function () {
+            mocha = new Mocha({
+                reporter: trxReporter,
+            });
+            const suite = new Mocha.Suite('TRX suite', 'root');
+            mocha.suite = suite;
+
+            // A before each hook that will succeed only once
+            let succeededOnce = false;
+            suite.beforeEach('Buggy beforeEach hook', () => {
+                if (succeededOnce) {
+                    throw new Error('Make hook fail');
+                }
+                succeededOnce = true;
+            });
+
+            suite.addTest(new Mocha.Test('runs fine', () => {}));
+            suite.addTest(new Mocha.Test('fails to run', () => {}));
+            suite.addTest(new Mocha.Test('fails to run', () => {}));
+        });
+
+        describe('run', function () {
+            it('should create a test result with 2 failures', function (done) {
+                const runner = mocha.run(() => {
+                    runner.should.have.property('testResults');
+                    runner.testResults.should.have.property('tests');
+                    runner.testResults.tests.should.be.an.instanceOf(Array);
+                    runner.testResults.tests.should.have.a.lengthOf(3);
+                    runner.testResults.tests.filter(t => t.state === 'failed').should.have.a.lengthOf(2);
+                    done();
+                });
+            });
+        });
+    });
+
     context('having custom options', function () {
         context('treatPendingAsNotExecuted enabled', function () {
             let mocha;
@@ -54,6 +92,20 @@ describe('Mocha with mocha-trx-reporter', function () {
                 const suite = new Mocha.Suite('TRX suite', 'root');
                 suite.addTest(new Mocha.Test('handles pending tests'));
                 mocha.suite = suite;
+            });
+
+            describe('run', function () {
+                it('should create correct mocha test result', function (done) {
+                    const runner = mocha.run();
+                    runner.on('end', () => {
+                        runner.failures.should.be.exactly(0);
+                        runner.should.have.property('testResults');
+                        runner.testResults.should.have.property('tests');
+                        runner.testResults.tests.should.be.an.instanceOf(Array);
+                        runner.testResults.tests.should.have.a.lengthOf(1);
+                        done();
+                    });
+                });
             });
 
             describe('run', function () {

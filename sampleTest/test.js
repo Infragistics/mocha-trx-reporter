@@ -22,3 +22,16 @@ describe('On sample test', function () {
         should(1).be.equal(1);
     });
 });
+
+
+describe('On sample test', function () {
+    before('outer Before', function () {});
+
+    describe('with failing hooks', function () {
+        before('inner Before', function () {
+            throw new Error('Fail');
+        });
+
+        it('test should fail', function () {});
+    });
+});

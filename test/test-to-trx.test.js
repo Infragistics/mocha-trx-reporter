@@ -49,8 +49,8 @@ describe('Module test-to-trx', function () {
             start: new Date('2015-08-10T00:00:00.000Z'),
             end: new Date('2015-08-10T00:00:10.000Z'),
             err: {
+                message: 'expected 1 to be 3',
                 stack: 'error stack trace',
-                _message: 'expected 1 to be 3',
             },
         };
 
@@ -122,40 +122,11 @@ describe('Module test-to-trx', function () {
         trxTest.should.have.property('errorMessage', '');
         trxTest.should.have.property('errorStacktrace', '');
 
-
         trxTest.should.have.property('test');
         trxTest.test.should.be.instanceOf(Object);
     });
 
     it('should generate correct trx object for unknown test result', function () {
-        const mochaTestMock = {
-            title: '1 should be 2',
-            fullTitle() { return 'On sample test 1 should be 2'; },
-            duration: 0,
-            err: undefined,
-            pending: false,
-            state: undefined,
-            start: new Date('2015-08-10T00:00:00.000Z'),
-            end: undefined,
-        };
-
-        const trxTest = testToTrx(mochaTestMock, computerName);
-
-        trxTest.should.be.instanceOf(Object);
-        trxTest.should.have.property('computerName', 'mycomputer');
-        trxTest.should.have.property('outcome', 'Inconclusive');
-        trxTest.should.have.property('duration', '00:00:00.000');
-        trxTest.should.have.property('startTime', '2015-08-10T00:00:00.000Z');
-        trxTest.should.have.property('endTime', '');
-        trxTest.should.have.property('errorMessage', '');
-        trxTest.should.have.property('errorStacktrace', '');
-
-
-        trxTest.should.have.property('test');
-        trxTest.test.should.be.instanceOf(Object);
-    });
-
-    it('should generate correct trx object when failing hooks', function () {
         const mochaTestMock = {
             title: '1 should be 2',
             fullTitle() { return 'On sample test 1 should be 2'; },
