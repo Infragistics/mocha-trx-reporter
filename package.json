@@ -1,7 +1,7 @@
 {
   "name": "mocha-trx-reporter",
   "description": "A mocha reporter for trx",
-  "version": "3.2.2",
+  "version": "3.2.3",
   "author": "Pablo Penén <ppenen@infragistics.com>",
   "license": "MIT",
   "repository": "Infragistics/mocha-trx-reporter",
