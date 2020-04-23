@@ -26,20 +26,20 @@ or you can set `MOCHA_REPORTER_FILE` environment var with the desired filename
 
 ### Reporter options
 
-- **output** (string)  
+- **output** (string)
   Outputs as a TRX file into the provided path. If not provided, outputs to stdout.
-- **treatPendingAsNotExecuted** (boolean)  
+- **treatPendingAsNotExecuted** (boolean)
   Pending tests (tests without implementation, or maked with `.skip`) have an  outcome of `NotExecuted` instead of
   `Pending` in the TRX file.
-- **excludePending** (boolean)  
+- **excludePending** (boolean)
   Tests with a `Pending` state are excluded from the TRX file.
-- **warnExcludedPending** (boolean)  
+- **warnExcludedPending** (boolean)
   When combined with *excludePending*, writes a warning to stderr with the number of
   tests that have been excluded because they had the state `Pending`, if the number is more than 0.
 
 #### Multiple options
 
-If you want to use multiple options, seperate them with a `,` like this:
+If you want to use multiple options, separate them with a `,` like this:
 
 `--reporter-options treatPendingAsNotExecuted,output=./test-result.trx`
 
@@ -51,8 +51,8 @@ Clone repository and install dependencies
 
 Running tests
 
-`$ npm run test`
+`$ npm test`
 
 For generating sample trx file
 
-`$ ./node_modules/mocha/bin/mocha --reporter lib/trx.js --reporter-options output=sampleResult.trx sampleTest/test.js`
+`$ npx mocha --reporter lib/trx.js --reporter-options output=sampleResult.trx sampleTest/test.js`
