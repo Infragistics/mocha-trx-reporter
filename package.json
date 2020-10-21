@@ -16,6 +16,7 @@
     "node": ">=6.4.0"
   },
   "dependencies": {
+    "md5": "^2.3.0",
     "node-trx": "^0.9.1"
   },
   "peerDependencies": {
