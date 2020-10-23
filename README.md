@@ -28,6 +28,7 @@ or you can set `MOCHA_REPORTER_FILE` environment var with the desired filename
 
 - **output** (string)
   Outputs as a TRX file into the provided path. If not provided, outputs to stdout.
+  The path can contain [hash], e.g. ./path_to_your/test-results.[hash].trx. [hash] is replaced by a random 32 hex char hash. This enables support of parallel execution of multiple mocha-trx-reporter's writing test results in separate files.
 - **treatPendingAsNotExecuted** (boolean)
   Pending tests (tests without implementation, or maked with `.skip`) have an  outcome of `NotExecuted` instead of
   `Pending` in the TRX file.
